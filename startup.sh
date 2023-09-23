@@ -32,10 +32,6 @@ sudo apt-get update && sudo apt-get install neovim -y
 sudo add-apt-repository ppa:pi-rho/dev -y
 sudo apt-get update && sudo apt-get install tmux -y
 
-# Install latest version of NodeJS
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install nodejs -y
-
 # Install latest Git
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt-get update && sudo apt-get install git -y
@@ -52,7 +48,7 @@ read github_username
 
 # Download GetGist to download my dot files from GitHub
 sudo pip3 install getgist
-export GETGIST_USER = $github_username
+export GETGIST_USER=$github_username
 
 # Setup Git global username and email
 git config --global user.name "$git_config_username"
@@ -62,15 +58,10 @@ git config --global user.email "$git_config_email"
 getmy .gitconfig
 
 # Generate a new SSH key for the machine
+echo "[+] Creating new SSH key for this machine"
 ssh-keygen -t rsa -b 4096 -C $git_config_email
 ssh-add ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
-
-# Setup ZSH and Oh My ZSH
-sudo apt-get install zsh -y
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-chsh -s $(which zsh)
-getmy .zshrc
 
 # Install Discord
 wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
@@ -93,9 +84,15 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 gpg --full-generate-key
 gpg --list-secret-keys --keyid-format LONG
 
-echo "[+] Please paste the GPG key ID to export and add to your global .gitconfig"
+echo "[+] Please paste here the GPG key ID displayed here."
 read gpg_key_id
 git config --global user.signingkey $gpg_key_id
 gpg --armor --export $gpg_key_id
+
+# Setup ZSH and Oh My ZSH
+sudo apt-get install zsh -y
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+chsh -s $(which zsh)
+getmy .zshrc
 
 echo "[!] Done"
