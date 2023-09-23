@@ -9,20 +9,20 @@
 cd ~ && sudo apt-get update
 
 # Installing basic packages
-sudo apt-get install curl -y        # Curl
-sudo apt-get install neofetch -y    # Neofetch bc yeah...
-sudo apt-get install xclip -y       # Tool to handle clipboard through the terminal
-sudo apt-get install htop -y        # Htop to monitor system resources
-sudo apt-get install tree -y        # Tree to display directory structure
-sudo apt-get install wget -y        # Wget to download files from the web
-sudo apt-get install net-tools -y   # Net-tools to use ifconfig
-sudo apt-get install cmake -y
-sudo apt-get install build-essential -y
-sudo apt-get install python3-dev -y
-sudo apt-get install python3-setuptools -y
-sudo apt-get install python3-wheel -y
-sudo apt-get install python3-venv -y
-sudo apt-get install python3-pip -y
+sudo apt-get install curl -y                # Curl
+sudo apt-get install neofetch -y            # Neofetch bc yeah...
+sudo apt-get install xclip -y               # Tool to handle clipboard through the terminal
+sudo apt-get install htop -y                # Htop to monitor system resources
+sudo apt-get install tree -y                # Tree to display directory structure
+sudo apt-get install wget -y                # Wget to download files from the web
+sudo apt-get install net-tools -y           # Net-tools to use ifconfig
+sudo apt-get install cmake -y               # Cmake for my C++ projects
+sudo apt-get install build-essential -y     # Build-essential to compile stuff
+sudo apt-get install python3-dev -y         # Python3 stuff
+sudo apt-get install python3-setuptools -y  #
+sudo apt-get install python3-wheel -y       #
+sudo apt-get install python3-venv -y        #
+sudo apt-get install python3-pip -y         #
 
 # Install latest version of neovim
 sudo add-apt-repository ppa:neovim-ppa/stable -y
