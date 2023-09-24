@@ -24,6 +24,24 @@ sudo apt-get install python3-wheel -y       #
 sudo apt-get install python3-venv -y        #
 sudo apt-get install python3-pip -y         #
 
+# Some tools I use for work
+sudo apt-get install nmap -y                # Nmap for network discovery
+sudo apt-get install wireshark -y           # Wireshark for network analysis
+sudo apt-get install aircrack-ng -y         # Aircrack-ng for wireless cracking
+sudo apt-get install hydra -y               # Hydra for brute forcing
+sudo apt-get install john -y                # John the Ripper for password cracking
+sudo apt-get install sqlmap -y              # Sqlmap for SQL injection
+sudo apt-get install nikto -y               # Nikto for web server scanning
+sudo apt-get install gobuster -y            # Gobuster for directory brute forcing
+sudo apt-get install exiftool -y            # Exiftool for reading metadata
+sudo apt-get install steghide -y            # Steghide for steganography
+sudo apt-get install binwalk -y             # Binwalk for analyzing files
+sudo apt-get install foremost -y            # Foremost for recovering files
+sudo apt-get install pngcheck -y            # Pngcheck for checking files
+sudo apt-get install hexedit -y             # Hexedit for editing files
+sudo apt-get install hashcat -y             # Hashcat for password cracking
+sudo apt-get install apktool -y             # Apktool for reverse engineering Android apps
+
 # Install latest version of neovim
 sudo add-apt-repository ppa:neovim-ppa/stable -y
 sudo apt-get update && sudo apt-get install neovim -y
