@@ -23,6 +23,7 @@ sudo apt-get install python3-setuptools -y  #
 sudo apt-get install python3-wheel -y       #
 sudo apt-get install python3-venv -y        #
 sudo apt-get install python3-pip -y         #
+sudo apt-get install autoconf
 
 # Some tools I use for work
 sudo apt-get install nmap -y                # Nmap for network discovery
@@ -98,11 +99,11 @@ clear
 # Bump up the max file watchers
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
-# Generate GPG key
+# Generate GPG key to use to sign commits
 gpg --full-generate-key
 gpg --list-secret-keys --keyid-format LONG
 
-echo "[+] Please paste here the GPG key ID displayed here."
+echo "[+] Please paste here the GPG key ID displayed here:"
 read gpg_key_id
 git config --global user.signingkey $gpg_key_id
 gpg --armor --export $gpg_key_id
@@ -112,5 +113,7 @@ sudo apt-get install zsh -y
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 chsh -s $(which zsh)
 getmy .zshrc
+
+sudo apt-get install fonts-powerline
 
 echo "[!] Done"
